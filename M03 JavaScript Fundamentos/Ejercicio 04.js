@@ -39,6 +39,9 @@ function numeroRandom() {
    let a =Math.random()*100
    let b = Math.round(a)
    let c = a-b;
+   if(c <= 0){
+      c= c*(-1)
+  }
    return c
 }
 
