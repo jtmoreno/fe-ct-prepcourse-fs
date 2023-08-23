@@ -3,34 +3,47 @@
 function devolverPrimerElemento(array) {
    // Retornar el primer elemento del arreglo recibido por parámetro.
    // Tu código:
+   return array[0]
 }
 
 function devolverUltimoElemento(array) {
    // Retornar el último elemento del arreglo recibido por parámetro.
    // Tu código:
+   array.reverse()
+   return array[0]
 }
 
 function obtenerLargoDelArray(array) {
    // Retornar la longitud del arreglo recibido por parámetro.
    // Tu código:
+   return array.length;
 }
 
 function incrementarPorUno(array) {
    // El arreglo recibido por parámetro contiene números.
    // Retornar un arreglo con los elementos incrementados en +1.
    // Tu código:
+   for (let index = 0; index < array.length; index++) {
+        array[index]= array[index] + 1;
+       
+   }
+   return array
 }
 
 function agregarItemAlFinalDelArray(array, elemento) {
    // Agrega el "elemento" al final del arreglo recibido.
    // Retorna el arreglo.
    // Tu código:
+   array.push(elemento)
+   return array
 }
 
 function agregarItemAlComienzoDelArray(array, elemento) {
    // Agrega el "elemento" al comienzo del arreglo recibido.
    // Retorna el arreglo.
    // Tu código:
+   array.unshift(elemento)
+   return array
 }
 
 function dePalabrasAFrase(palabras) {
@@ -39,8 +52,17 @@ function dePalabrasAFrase(palabras) {
    // con un espacio entre cada palabra.
    // Ejemplo: ['Hello', 'world!'] -> 'Hello world!'.
    // Tu código:
-}
-
+   let result = "";
+ 
+   for (let i = 0; i < palabras.length; i++) {
+     if (i == palabras.length - 1) {
+       result += palabras[i];
+     } else {
+       result += palabras[i] + " ";
+     }
+   }
+   return result;
+ }
 function arrayContiene(array, elemento) {
    // Verifica si el elemento existe dentro del arreglo recibido.
    // Retornar true si está, o false si no está.
