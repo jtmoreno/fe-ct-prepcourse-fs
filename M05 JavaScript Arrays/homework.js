@@ -67,24 +67,38 @@ function arrayContiene(array, elemento) {
    // Verifica si el elemento existe dentro del arreglo recibido.
    // Retornar true si está, o false si no está.
    // Tu código:
+   return array.includes(elemento)
 }
 
 function agregarNumeros(arrayOfNums) {
    // El parámetro "arrayOfNums" debe ser un arreglo de números.
    // Suma todos los elementos y retorna el resultado.
    // Tu código:
+   return arrayOfNums.reduce((acumulador, elemento) => acumulador + elemento)
 }
 
 function promedioResultadosTest(resultadosTest) {
    // El parámetro "resultadosTest" es un arreglo de números.
    // Itera (en un bucle) los elementos del arreglo y devuelve el promedio de las notas.
    // Tu código:
+   var suma =agregarNumeros(resultadosTest)
+   return suma/resultadosTest.length
 }
 
 function numeroMasGrande(arrayOfNums) {
    // El parámetro "arrayOfNums" es un arreglo de números.
    // Retornar el número más grande.
    // Tu código:
+   let max = 0
+   for (let index = 0; index < arrayOfNums.length; index++) {
+      const element = arrayOfNums[index];
+      
+      if(element > max) {
+         max = element;
+      }
+      
+   }
+   return max;
 }
 
 function multiplicarArgumentos() {
@@ -92,12 +106,32 @@ function multiplicarArgumentos() {
    // Si no se pasan argumentos retorna 0. Si se pasa un argumento, simplemente retórnalo.
    // [PISTA]: "arguments" es un arreglo.
    // Tu código:
+   if(arguments.length == 0) {
+      return 0;
+   }else if(arguments.length == 1){
+      return arguments[0];
+   }else{
+      let acum = 1;
+      for (let index = 0; index < arguments.length; index++) {
+         const element = arguments[index];
+         acum *= element
+      }
+      return acum;
+   }
 }
 
 function cuentoElementos(array) {
    // Desarrolla una función que retorne la cantidad de elementos del arreglo cuyo valor sea mayor que 18.
    // Tu código:
-}
+   let count = 0;
+   for (let index = 0; index < array.length; index++) {
+      const element = array[index];
+      var res = element > 18 ? true : false;
+      if(res) { count+=1}
+      
+   }
+   return count
+ }
 
 function diaDeLaSemana(numeroDeDia) {
    // Supongamos que los días de la semana se codifican como 1 = Domingo, 2 = Lunes y así sucesivamente.
